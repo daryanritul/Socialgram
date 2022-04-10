@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "socialgram:build:production",
+            "firebaseProject": "socialmedia-98a61",
+            "firebaseHostingSite": "socialmedia-98a61"
+          }
         }
       }
     }

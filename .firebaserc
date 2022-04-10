@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "socialmedia-98a61": {
+      "hosting": {
+        "socialgram": [
+          "socialmedia-98a61"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "socialmedia-98a61"
+  }
+}
