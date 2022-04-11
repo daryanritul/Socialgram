@@ -4,34 +4,38 @@
     <div class="logo-title">Social<span>gram</span></div>
   </div>
   <div class="searchBar">
-    <input type="text" />
+    <input type="text" placeholder="Search" />
     <fa-icon [icon]="search"></fa-icon>
   </div>
-  <div class="bar">
-    <div class="optionBar">
-      <div class="option">
-        <fa-icon [icon]="feed"></fa-icon>
-        <div class="option-title">Feeds</div>
-      </div>
-      <div class="option">
-        <fa-icon [icon]="explore"></fa-icon>
-        <div class="option-title">Explore</div>
-      </div>
-      <div class="option">
-        <fa-icon [icon]="messge"></fa-icon>
-        <div class="option-title">Chats</div>
-      </div>
+  <div class="optionBar">
+    <div class="option">
+      <fa-icon [icon]="feed"></fa-icon>
+      <div class="option-title">Feeds</div>
     </div>
-    <div class="auths" (click)="changeAuth()" *ngIf="!authState">
-      <fa-icon [icon]="signin"></fa-icon>
-      <div class="auths-text">Sign In / Sign Up</div>
+    <div class="option">
+      <fa-icon [icon]="explore"></fa-icon>
+      <div class="option-title">Explore</div>
     </div>
-    <div class="user white" (click)="changeAuth()" *ngIf="authState">
-      <img
-        src="https://images.pexels.com/photos/10774229/pexels-photo-10774229.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-        alt=""
-      />
+    <div class="option">
+      <fa-icon [icon]="messge"></fa-icon>
+      <div class="option-title">Chats</div>
+    </div>
+    <div class="option user" (click)="handleSignOut()" *ngIf="email">
+      <div class="user-image">
+        <img
+          src="https://images.pexels.com/photos/10774229/pexels-photo-10774229.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          alt=""
+        />
+      </div>
       <div class="user-name">Ritul Daryan</div>
+    </div>
+    <div class="option logout" *ngIf="email">
+      <fa-icon [icon]="signout"></fa-icon>
+      <div class="option-title">Log Out</div>
+    </div>
+    <div class="option auth" (click)="handleAuth()" *ngIf="!email">
+      <fa-icon [icon]="signin"></fa-icon>
+      <div class="option-title">LOGIN</div>
     </div>
   </div>
 </div>

@@ -9,3 +9,13 @@ html{
     font-family: 'Nunito', sans-serif;
     background-color: #eaedf1;
 }
+input{
+font-family: 'Nunito', sans-serif;
+
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
