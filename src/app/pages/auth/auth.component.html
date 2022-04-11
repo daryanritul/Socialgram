@@ -1,1 +1,52 @@
-<p>auth works!</p>
+<div class="auth">
+  <div class="toggle">
+    <button
+      [ngClass]="signIn ? 'active' : ''"
+      class="toggle-btn"
+      (click)="changeOption(true)"
+    >
+      Sign In
+    </button>
+    <button
+      class="toggle-btn"
+      [ngClass]="!signIn ? 'active' : ''"
+      class="toggle-btn"
+      (click)="changeOption(false)"
+    >
+      Sign Up
+    </button>
+  </div>
+
+  <form action="submit">
+    <h3 class="title">{{ signIn ? "Sign In" : "Sign Up" }}</h3>
+    <h5 class="Subtitle">
+      {{
+        signIn
+          ? "Sign in with registred email and password"
+          : "Create new account"
+      }}
+    </h5>
+    <div class="input" *ngIf="!signIn">
+      <div class="input-label">Name</div>
+      <input type="text" placeholder="Display Name" />
+    </div>
+    <div class="input">
+      <div class="input-label">Email</div>
+      <input type="email" placeholder="Email Address" />
+    </div>
+    <div class="input">
+      <div class="input-label">Password</div>
+      <input type="password" placeholder="Password" />
+    </div>
+    <div class="input" *ngIf="!signIn">
+      <div class="input-label">Confirm Password</div>
+      <input type="password" placeholder="Password" />
+    </div>
+    <div class="error" *ngIf="error">
+      <p class="error-message">{{ error }}</p>
+    </div>
+    <div class="submit">
+      <button class="submit-btn">Submit</button>
+    </div>
+  </form>
+</div>
