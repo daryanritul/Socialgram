@@ -8,7 +8,7 @@
     <fa-icon [icon]="search"></fa-icon>
   </div>
   <div class="optionBar">
-    <div class="option">
+    <div class="option" (click)="handleRoutes('feeds')">
       <fa-icon [icon]="feed"></fa-icon>
       <div class="option-title">Feeds</div>
     </div>
@@ -16,11 +16,11 @@
       <fa-icon [icon]="explore"></fa-icon>
       <div class="option-title">Explore</div>
     </div>
-    <div class="option">
+    <div class="option" (click)="handleRoutes('chats')">
       <fa-icon [icon]="messge"></fa-icon>
       <div class="option-title">Chats</div>
     </div>
-    <div class="option user" (click)="handleSignOut()" *ngIf="email">
+    <div class="option user" *ngIf="email">
       <div class="user-image">
         <img
           src="https://images.pexels.com/photos/10774229/pexels-photo-10774229.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
@@ -29,11 +29,15 @@
       </div>
       <div class="user-name">Ritul Daryan</div>
     </div>
-    <div class="option logout" *ngIf="email">
+    <div class="option logout" *ngIf="email" (click)="handleSignOut()">
       <fa-icon [icon]="signout"></fa-icon>
       <div class="option-title">Log Out</div>
     </div>
-    <div class="option auth" (click)="handleAuth()" *ngIf="!email">
+    <div
+      class="option auth"
+      (click)="handleRoutes('authentication')"
+      *ngIf="!email"
+    >
       <fa-icon [icon]="signin"></fa-icon>
       <div class="option-title">LOGIN</div>
     </div>

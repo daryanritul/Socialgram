@@ -36,13 +36,23 @@ export class HeaderComponent implements OnInit {
         console.log(this.authState);
         this.authState = !this.authState;
     }
-    
-    async handleAuth(){
-        console.log("Reddirect to Auth Page");
+
+    handleRoutes(path:string){
+        this.router.navigateByUrl(`/${path}`);
     }
+
     async handleSignOut(){
+        console.log("is");
+        
         try {
-            await this.auth.signOut();
+            await this.auth.signOut().then(()=>{
+                this.router.navigateByUrl('/authentication')
+                console.log("Done");
+                
+            }).catch(err => {
+                console.log(err);
+                
+            })
         } catch (error) {
             console.log(error);
         }

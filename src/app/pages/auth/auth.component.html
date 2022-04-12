@@ -17,7 +17,7 @@
     </button>
   </div>
 
-  <form action="submit">
+  <form action="submit" #f="ngForm" (ngSubmit)="onSubmitHandler(f)">
     <h3 class="title">{{ signIn ? "Sign In" : "Sign Up" }}</h3>
     <h5 class="Subtitle">
       {{
@@ -28,19 +28,24 @@
     </h5>
     <div class="input" *ngIf="!signIn">
       <div class="input-label">Name</div>
-      <input type="text" placeholder="Display Name" />
+      <input type="text" placeholder="Display Name" name="name" ngModel />
     </div>
     <div class="input">
       <div class="input-label">Email</div>
-      <input type="email" placeholder="Email Address" />
+      <input type="email" placeholder="Email Address" name="email" ngModel />
     </div>
     <div class="input">
       <div class="input-label">Password</div>
-      <input type="password" placeholder="Password" />
+      <input type="password" placeholder="Password" name="password" ngModel />
     </div>
     <div class="input" *ngIf="!signIn">
       <div class="input-label">Confirm Password</div>
-      <input type="password" placeholder="Password" />
+      <input
+        type="password"
+        placeholder="Password"
+        name="cnfPassword"
+        ngModel
+      />
     </div>
     <div class="error" *ngIf="error">
       <p class="error-message">{{ error }}</p>
